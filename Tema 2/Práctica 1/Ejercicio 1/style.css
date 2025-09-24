@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: bisque;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    border: 2px solid black;
+    padding: 2em;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;    
+}
+
+form h1 {
+    margin-bottom: 1em;
+}
+
+form p{
+    width: 100%;
+    text-align: left;
+}
+
+form input {
+    background-color: antiquewhite;
+    border: 1px dotted black;
+    padding: 0.5em;
+}
+
+.botones {
+    display: flex;
+    gap: 1em;
+}
+
+.botones input {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.4em 0.8em 0.4em 0.8em;
+}

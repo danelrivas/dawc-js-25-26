@@ -1,17 +1,32 @@
-let cuentaCorriente = {
-    nombre: "Danel Rivas",
-    saldo: 5000,
-    //Metodo para retirar añadido dentro de antemano
-    retirar(incremento){
-        alert("Tu nuevo saldo es: " + (saldo - incremento));
+let usuario = [
+    {
+        nombre: "Danel",
+        password: "12345Abcde"
+    }, 
+    {
+        nombre: "Iker",
+        password: "12345678"
+    }
+];
+
+document.addEventListener("click", validar);
+
+let nombre = document.getElementsByName("nombre");
+let password = document.getElementById("pswd");
+
+function validar(nombre, password){
+    let erPassword = /^.{8}$/;
+    let erNombre = /^.{12}$/;
+
+    if (erNombre.test(nombre)){
+        for (let i = 0; i < usuario.length; i++){
+            if (nombre == i){
+
+            } else {
+                
+            }
+        }
+    } else {
+        alert("Nombre incorrecto");
     }
 }
-
-//Metodo para ingresar añadido fuera posteriormente
-cuentaCorriente.ingresar = function(incremento){
-    alert("Tu nuevo saldo es: " + (saldo + incremento));
-}
-
-let incremento = prompt("Introduce la cantidad deseada:");
-cuentaCorriente.ingresar(incremento);
-cuentaCorriente.retirar(incremento);
