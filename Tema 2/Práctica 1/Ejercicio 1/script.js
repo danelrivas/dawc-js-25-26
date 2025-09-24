@@ -9,33 +9,38 @@ let usuario = [
     }
 ];
 
-let botonEntrar = document.getElementsByClassName("entrar");
-botonEntrar.addEventListener("click", validar());
+let botonEntrar = document.getElementsByClassName("entrar")[0];
+let nombreInput = document.getElementsByName("nombre")[0];
+let passwordInput = document.getElementById("pswd");
 
-let nombre = document.getElementsByName("nombre");
-let password = document.getElementById("pswd");
+botonEntrar.addEventListener("click", function() {
+    validar(nombreInput.value, passwordInput.value);
+});
 
 function validar(nombre, password){
-    let erPassword = /^.{8}$/;
-    let erNombre = /^.{12}$/;
+    let erPassword = /^.{8,}$/; 
+    let erNombre = /^.{3,}$/;   
 
-    if (erNombre.test(nombre)){
-        for (let i = 0; i < usuario.length; i++){
-            if (nombre == i[nombre]){
-                if (erPassword.test(password)){
-                    if (password == i[password]){
-                        alert("Has iniciado sesión");
-                    } else{
-                        alert("Contraseña incorrecta");
-                    }
-                } else {
-                    alert("Contraseña con er incorrecta");
-                }
-            } else {
-                alert("Nombre incorrecto");
-            }
-        }
+    if (!erNombre.test(nombre)) {
+        alert("Nombre con formato incorrecto");
+        return;
+    }
+
+    let usuarioEncontrado = usuario.find(u => u.nombre === nombre);
+
+    if (!usuarioEncontrado) {
+        alert("Nombre incorrecto");
+        return;
+    }
+
+    if (!erPassword.test(password)) {
+        alert("Contraseña con formato incorrecto");
+        return;
+    }
+
+    if (usuarioEncontrado.password === password) {
+        alert("Has iniciado sesión");
     } else {
-        alert("Nombre con er incorrecto");
+        alert("Contraseña incorrecta");
     }
 }
