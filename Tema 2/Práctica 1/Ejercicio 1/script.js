@@ -9,7 +9,8 @@ let usuario = [
     }
 ];
 
-document.addEventListener("click", validar);
+let botonEntrar = document.getElementsByClassName("entrar");
+botonEntrar.addEventListener("click", validar());
 
 let nombre = document.getElementsByName("nombre");
 let password = document.getElementById("pswd");
@@ -20,13 +21,21 @@ function validar(nombre, password){
 
     if (erNombre.test(nombre)){
         for (let i = 0; i < usuario.length; i++){
-            if (nombre == i){
-
+            if (nombre == i[nombre]){
+                if (erPassword.test(password)){
+                    if (password == i[password]){
+                        alert("Has iniciado sesión");
+                    } else{
+                        alert("Contraseña incorrecta");
+                    }
+                } else {
+                    alert("Contraseña con er incorrecta");
+                }
             } else {
-                
+                alert("Nombre incorrecto");
             }
         }
     } else {
-        alert("Nombre incorrecto");
+        alert("Nombre con er incorrecto");
     }
 }

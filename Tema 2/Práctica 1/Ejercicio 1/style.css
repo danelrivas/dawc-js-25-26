@@ -50,3 +50,8 @@ form input {
     border-radius: 5px;
     padding: 0.4em 0.8em 0.4em 0.8em;
 }
+
+.botones input:hover {
+    transform: scale(1.2);
+    transition: ease-in 0.5;
+}
