@@ -21,6 +21,7 @@ main{
     border: 1px solid steelblue;
     border-radius: 10px;
     padding: 2em;
+    min-width: 700px;
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -73,6 +74,16 @@ main{
     font-weight: bold;
 }
 
+.dia:hover {
+    background-color: #cce4ff;
+    transform: translateY(-2px);
+}
+
+.dia.selected {
+    background-color: #3b82f6;
+    color: white;
+}
+
 .tarea {
     margin-top: 3.3em;
     width: 50%;
@@ -96,14 +107,14 @@ form:first-child input {
     gap: 1em;
 }
 
-.botones input {
+.botones button {
     background-color: white;
     border: 2px solid steelblue;
     border-radius: 5px;
     padding: 0.5em;
 }
 
-.botones input:hover {
+.botones button:hover {
     transform: scale(1.1);
     transition: ease-in-out(0.8, 0.8);
 }

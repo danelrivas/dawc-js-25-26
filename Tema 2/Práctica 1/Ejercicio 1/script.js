@@ -1,4 +1,4 @@
-document.getElementsByClassName("entrar").addEventListener('click', validar);
+document.getElementById("entrar").addEventListener('click', validar);
 
 var usuario = [
     {
@@ -14,42 +14,46 @@ var usuario = [
 
 function validar(){
     try {
-        validarErNombre();
-        validarNombre();
-        validarErContraseña();
-        validarContraseña();
+        var passwordVal = document.getElementById("pswd").value;
+        var nombreVal = document.getElementById("name").value;
+
+        validarErNombre(nombreVal);
+        let usuarioEncontrado = validarNombre(nombreVal);
+        validarErContraseña(passwordVal);
+        validarContraseña(usuarioEncontrado, passwordVal);
     
     } catch(e){
         alert(e);
 
     }
+}
 
-
-
-    let nombre = document.getElementsByName("nombre");
-    let password = document.getElementById("pswd");
-    let erPassword = /^[a-zA-Z0-9.,-]{8,}$/; 
+function validarErNombre(nombreVal){
     let erNombre = /^[a-zA-Z0-9]{3,}$/;   
-    if (!erNombre.test(nombre)) {
-        alert("Nombre con formato incorrecto");
-        return;
+    if (!erNombre.test(nombreVal)) {
+        throw "Nombre con formato incorrecto";
     }
+}
 
-    let usuarioEncontrado = usuario.find(u => u.nombre === nombre);
-
+function validarNombre(nombreVal){
+    let usuarioEncontrado = usuario.find(u => u.nombre === nombreVal);
     if (!usuarioEncontrado) {
-        alert("Nombre incorrecto");
-        return;
+        throw ("Nombre incorrecto");
     }
+    return usuarioEncontrado;
+}
 
-    if (!erPassword.test(password)) {
-        alert("Contraseña con formato incorrecto");
-        return;
+function validarErContraseña(passwordVal){
+    let erPassword = /^[a-zA-Z0-9.,-]{8,}$/; 
+    if (!erPassword.test(passwordVal)) {
+        throw "Contraseña con formato incorrecto";
     }
+}
 
-    if (usuarioEncontrado.password === password) {
+function validarContraseña(usuarioEncontrado, passwordVal){
+    if (usuarioEncontrado.password === passwordVal) {
         alert("Has iniciado sesión");
     } else {
-        alert("Contraseña incorrecta");
+        throw("Contraseña incorrecta");
     }
 }

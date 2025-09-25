@@ -8,51 +8,52 @@
 </head>
 <body>
     <main>
-        <form action="">
+        <form id="formulario">
             <h1>FORMULARIO</h1><br>
             <div>
-                Nombre: <input type="text">
+                Nombre: <input type="text" id="nombre">
             </div>
             <div>
-                Apellidos: <input type="text" name="" id="">
+                Apellidos: <input type="text" id="apellidos">
             </div>
             <div>
-                Correo electrónico: <input type="text" name="" id="" value="@">
+                Correo electrónico: <input type="text" id="correo" value="@">
             </div>
             <div>
-                Población: <input type="text">
+                Población: <input type="text" id="poblacion">
             </div>
             <div>
-                Provincia: <input type="text">
+                Provincia: <input type="text" id="provincia">
             </div>
             <div>
                 Edad:
                 <div>
-                    <input type="radio" name="" id="">0-20</input>
+                    <input type="radio" name="edad" value="0-20">0-20
                 </div>
                 <div>
-                    <input type="radio" name="" id="">20-40</input>
+                    <input type="radio" name="edad" value="20-40">20-40
                 </div>
                 <div>
-                    <input type="radio" name="" id="">40-60</input>
+                    <input type="radio" name="edad" value="40-60">40-60
                 </div>
                 <div>
-                    <input type="radio" name="" id="">60-100</input>
+                    <input type="radio" name="edad" value="60-100">60-100
                 </div>
             </div>
+
             <div>
                 ¿Como nos has conocido?
                 <div>
-                    <input type="checkbox" name="" id="">A través de un amigo</input>
+                    <input type="checkbox" name="conocido" value="amigo">A través de un amigo
                 </div>
                 <div>
-                    <input type="checkbox" name="" id="">A través de un buscador</input>
+                    <input type="checkbox" name="conocido" value="buscador">A través de un buscador
                 </div>
                 <div>
-                    <input type="checkbox" name="" id="">Navegando por la red</input>
+                    <input type="checkbox" name="conocido" value="red">Navegando por la red
                 </div>
                 <div>
-                    <input type="checkbox" name="" id="">Otros</input>
+                    <input type="checkbox" name="conocido" value="otros">Otros
                 </div>
             </div>
             <div class="botones">
@@ -61,5 +62,6 @@
             </div>
         </form>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
