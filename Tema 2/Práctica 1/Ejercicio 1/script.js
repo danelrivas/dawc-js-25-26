@@ -1,4 +1,6 @@
-let usuario = [
+document.getElementsByClassName("entrar").addEventListener('click', validar);
+
+var usuario = [
     {
         nombre: "Danel",
         password: "12345Abcde"
@@ -9,18 +11,25 @@ let usuario = [
     }
 ];
 
-let botonEntrar = document.getElementsByClassName("entrar")[0];
-let nombreInput = document.getElementsByName("nombre")[0];
-let passwordInput = document.getElementById("pswd");
 
-botonEntrar.addEventListener("click", function() {
-    validar(nombreInput.value, passwordInput.value);
-});
+function validar(){
+    try {
+        validarErNombre();
+        validarNombre();
+        validarErContraseña();
+        validarContraseña();
+    
+    } catch(e){
+        alert(e);
 
-function validar(nombre, password){
-    let erPassword = /^.{8,}$/; 
-    let erNombre = /^.{3,}$/;   
+    }
 
+
+
+    let nombre = document.getElementsByName("nombre");
+    let password = document.getElementById("pswd");
+    let erPassword = /^[a-zA-Z0-9.,-]{8,}$/; 
+    let erNombre = /^[a-zA-Z0-9]{3,}$/;   
     if (!erNombre.test(nombre)) {
         alert("Nombre con formato incorrecto");
         return;

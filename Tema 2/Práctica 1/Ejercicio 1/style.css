@@ -45,13 +45,13 @@ form input {
     gap: 1em;
 }
 
-.botones input {
+.botones button {
     border: 1px solid black;
     border-radius: 5px;
     padding: 0.4em 0.8em 0.4em 0.8em;
 }
 
-.botones input:hover {
+.botones button:hover {
     transform: scale(1.2);
     transition: ease-in 0.5;
 }
