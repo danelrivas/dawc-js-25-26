@@ -29,6 +29,7 @@ botonResetear.addEventListener("click", () => {
 //Crea un elemento li, le coloca el texto recibido en la function y le añade las opciones que debe de tener
 function crearElemento(texto) {
     let li = document.createElement("li");
+    li.classList.add("elemento");
     li.textContent = texto;
 
     // Editar al hacer click

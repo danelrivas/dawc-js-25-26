@@ -58,3 +58,8 @@ input[type = "button"]{
 input[type = "button"]:hover{
     background-color: rgba(165, 42, 42, 0.7);
 }
+
+.elemento {
+    font-style: italic;
+    color: white;
+}
